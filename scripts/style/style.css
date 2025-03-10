@@ -1,0 +1,158 @@
+.Star {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 32px 4px rgba(255, 255, 255, 1);
+    aspect-ratio: 1 / 1;
+}
+
+.Scene,
+.Display {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.TrailContainer,
+.Display {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.TrailContainer > div,
+.Display > div {
+    position: absolute;
+    width: 2px;
+    aspect-ratio: 1 / 1;
+    opacity: 0.25;
+}
+
+.Object {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    z-index: 4;
+}
+
+.ValueList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+
+    position: absolute;
+    left: 20em;
+    bottom: 0;
+    width: calc(100% - 20em);
+    height: calc(2em + 2px);
+
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: none;
+    background-color: rgba(255, 255, 255, 0.0625);
+    backdrop-filter: blur(2px);
+
+    z-index: 4;
+
+    transition: width 0.25s ease;
+}
+
+.ValueList > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.PartList {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20em;
+    min-height: calc(8em + 2px);
+    max-height: calc(8em + 2px);
+
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.0625);
+    backdrop-filter: blur(2px);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.PartList > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: relative;
+    min-height: 2em;
+    max-height: 2em;
+    width: 100%;
+
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(100, 100, 100, 0.125);
+    backdrop-filter: blur(2px);
+
+    cursor: pointer;
+}
+
+.PartList > div > .Visual {
+    position: absolute;
+    height: calc(100% - 16px);
+    aspect-ratio: 1 / 1;
+    margin: 8px;
+}
+
+.PartList > div > :not(.Visual) {
+    padding-left: 2em;
+}
+
+.Options {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    padding: 8px;
+
+    position: absolute;
+    right: -25em;
+    top: 0;
+    width: 25em;
+    height: 100%;
+
+    box-sizing: border-box;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.125);
+    backdrop-filter: blur(2px);
+
+    transition: right 0.25s ease;
+}
+
+.Options > hr {
+    width: 100%;
+    opacity: 0.5;
+}
+
+.Options > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Options > * {
+    font-size: 18px;
+}
