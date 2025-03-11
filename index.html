@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <link rel="stylesheet" href="scripts/style/format.css">
+        <link rel="stylesheet" href="scripts/style/style.css">
+        
+        <script type="module" src="scripts/global.d.js"></script>
+        <script type="module" src="scripts/scene.js"></script>
+        <script type="module" src="scripts/simulation.js"></script>
+        <script type="module" src="scripts/controls.js"></script>
+        <script type="module" src="scripts/hud.js"></script>
+
+        <title>Universe Sandbox</title>
+    </head>
+    <body>
+        <div class="Scene"></div>
+        <div class="Display"></div>
+        <div class="TrailContainer"></div>
+        <div class="PartList"></div>
+        <div class="ValueList">
+            <div>
+                <span prefix="Universe: " root="globalThis" value="Universe">Universe: ~</span>
+                <span style="min-width: 3.75em; max-width: 3.75em; text-wrap: nowrap;" prefix="FPS: " display="Performance.Fps">FPS: ~~</span>
+                <span prefix="Timelapse: " root="Simulation" display="StepSize" format="toFixed:2" suffix="x">Timelapse: ~.~~x</span>
+            </div>
+            <div>
+                <span prefix="∆t: " display="Performance.Dt" format="toFixed:2" suffix="s">∆t: ~.~~s</span>
+                <div button class="LoadButton">Load Universe</div>
+                <div button class="SaveButton">Save Universe</div>
+            </div>
+        </div>
+        <div class="ObjectList"></div>
+        <div style="right: -25em;" class="Options"></div>
+    </body>
+</html>
